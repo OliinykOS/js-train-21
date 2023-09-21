@@ -31,8 +31,8 @@ class Musician {
     // статичне поле count, яке відслідковує кількість музикантів, початкове значення 0
     static count = 0;
     // Об'являємо приватні поля #name; #instrument;
-    #name;
-    #instrument;
+    #name = null;
+    #instrument = null;
     constructor(name, instrument) {
         // Конструктор приймає два параметри: name та instrument
         // присвоєння вхідного значення name до приватного поля #name
@@ -109,7 +109,7 @@ class Musician {
 
 class Guitarist extends Musician {
     // Об'являємо приватні поля #band;
-    #band;
+    #band = null;
     // Конструктор приймає три параметри: name, instrument та band
     constructor(name, instrument, band) {
         // виклик конструктора батьківського класу super з двома параметрами name, instrument
@@ -175,7 +175,7 @@ class Guitarist extends Musician {
 
 class Bassist extends Musician {
     // Об'являємо приватні поля  #band;
-    #band;
+    #band = null;
     // Конструктор приймає три параметри: name, instrument та band
     constructor(name, instrument, band) {
         // виклик конструктора батьківського класу super з двома параметрами name, instrument
@@ -225,8 +225,8 @@ Object.defineProperty(Musician.prototype, "band", (newBand) => {
 
 class Band {
     // Об'являємо приватні поля #name; #members;
-    #name;
-    #members = [];
+    #name = null;
+    #members = null;
     /*
      * Створюємо конструктор з двома вхідними параметрами: #name і #members
      * #members - це масив об'єктів, що є екземплярами класу Musician або його нащадків
@@ -280,9 +280,9 @@ class Band {
  */
 class Performance {
     // Об'являємо приватні поля #band; #location; #date;
-    #band;
-    #location;
-    #date;
+    #band = null;
+    #location = null;
+    #date = null;
     // Створюємо конструктор з трьома вхідними параметрами: #band, #location та #date
     constructor(band, location, date) {
         this.#band = band;
@@ -323,7 +323,7 @@ class Performance {
  */
 class Concert extends Performance {
     // Об'являємо приватні поля #ticketPrice;
-    #ticketPrice;
+    #ticketPrice = null;
     // Створюємо конструктор з чотирма вхідними параметрами: #band, #location, #date та #ticketPrice
     constructor(band, location, date, ticketPrice) {
         // використання super для виклику конструктора базового класу
@@ -360,8 +360,8 @@ class Concert extends Performance {
  */
 class Vocalist {
     // Об'являємо приватні поля #name; #band;
-    #name;
-    #band;
+    #name = null;
+    #band = null;
     // Створюємо конструктор з двома вхідними параметрами: #name та #band
     constructor(name, band) {
         this.#name = name;
@@ -399,7 +399,7 @@ class Vocalist {
  */
 class SongWriter {
     // Об'являємо приватні поля #songs;
-    #song;
+    #song = null;
     // Створюємо конструктор з одним вхідним параметром: #songs
     constructor(song) {
         this.#song = song;
